@@ -52,11 +52,11 @@ public class Competitor {
 	
 	
 	//Full Details Method
-	
+
 	public String getFullDetails() {
-		
+
 		String c_details = "Competitor number " + this.competitorID + ", " + " name " + this.name.name  + "," +  " country " + this.country  + " \n " + this.name.getFirstName()+ " , is a "+ this.level[0] +  " aged " + this.competitorAge +  " and has an overall score of " + getOverallScore () ;
-		
+
 		return c_details;
 	}
 	
@@ -71,6 +71,17 @@ public class Competitor {
 		
 
 }
+	// Get initials
+	private String getInitials() {
+		String[] names = competitorName.split(" ");
+		StringBuilder initials = new StringBuilder();
+		for (String name : names) {
+			if (!name.isEmpty()) {
+				initials.append(name.charAt(0));
+			}
+		}
+		return initials.toString();
+	}
 	
 	//Overall Score  Method
 		public double getOverallScore(){
@@ -84,15 +95,17 @@ public class Competitor {
 		 this.CompetitorScores = Scores ;
 		
 	 }
- //Method for getting score array
-	 
-	 public ArrayList getScoreArray() {
-		 return CompetitorScores ;
-	 }
 
-	
-	
-		
+ 	//Method for getting score array
+	public double getOverallScore() {
+		if (scores == null || scores.length == 0) {
+			return 0.0;
+		}
+		int sum = 0;
+		for (int score : scores) {
+			sum += score;
+		}
+		return sum / (double) scores.length;
 	}
 		
 	
