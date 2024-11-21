@@ -33,7 +33,8 @@ public class Main {
 		
 		System.out.println(returnedScores);
 	}
-	
+
+	// Initialized GUI
 		
 }
 

@@ -1,7 +1,7 @@
 package Assessment;
 
 import java.util.ArrayList;
-
+import java.sql.*;
 public class Competitor {
 	
 	public int competitorID;
@@ -15,7 +15,7 @@ public class Competitor {
 	
 	
 	
-	
+	final mySQL =
 	public Competitor (int ID , int age, Name n, String country ) {
 		
 		this.competitorID = ID ; 
@@ -39,8 +39,8 @@ public class Competitor {
 	
 	//name getters
 	
-	private  Name getName () {
-		return name ;
+	public String getCompetitorName() {
+		return competitorName;
 	}
 
 	// country getter
@@ -85,10 +85,10 @@ public class Competitor {
 	
 	//Overall Score  Method
 		public double getOverallScore(){
-			
-			return 5.0; 
+
+			return 5.0;
 }
-		
+
 	//Score Array
 	 public void setScoreArray(ArrayList Scores) {
 		 

@@ -18,7 +18,7 @@ public class Manager {
             statement.setString(2, competitor.getCompetitorName());
             statement.setInt(4, competitor.getCompetitorAge());
             statement.setString(3, competitor.getLevel().name());
-            statement.setString(6, convertScoresToString(competitor.getScores()));
+            statement.setString(6, convertScoresToString(competitor.getOverallScore()));
             statement.setString(5, competitor.getCompetitorCountry());
             statement.executeUpdate();
 
